@@ -1,0 +1,45 @@
+body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background: #ffffff;
+}
+
+  h1{
+  text-align: center;
+  color: #98dafc;
+}
+
+/* blue -> #98dafc
+   orange - > #daad86
+   black -> #312c32
+*/
+
+.login{
+  margin: auto;
+  padding-top: 150px;
+  padding-left: 250px;
+  padding-right: 250px;
+  text-align: center;
+}
+
+#login_btn{
+  border-width: 0px;
+  background-color: #daad86;
+  width: 300px;
+}
+
+#email{
+  margin-left: 170px;
+  width: 300px;
+  text-align: center;
+}
+
+#password{
+  margin-left: 170px;
+  width: 300px;
+  text-align: center;
+}
+
+
+
