@@ -15,6 +15,9 @@ function ($routeProvider) {
     }).when('/graphs', {
         templateUrl: 'graphs.html',
         controller: 'graphsController'
+    }).when('/forgetPassword', {
+        templateUrl: 'forgetPassword.html',
+        controller: 'forgetPasswordController'
     }).otherwise({
         redirectTo: '/login'
     });

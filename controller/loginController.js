@@ -12,7 +12,7 @@ wlog.controller("loginController",['$rootScope','$scope','$http','$window', func
         var url = "";
         if ($scope.loginForm.id == -1) {
             method = "POST";
-            url = 'RAHLMS/login';
+            url = 'weblog/login';
         }
         $http({
             method : method,
