@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+</head>
+<body>
+    <form action="WebLog_SignUp.php" method="POST" name="register_form">
+        <table id="title">
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="fname" /></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="lname" /></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email" /></td>
+            </tr>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="username" /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" /></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" name="submit" value="Sign Up" /></td>
+            </tr>
+        </table>
+        </div>
+    </form>
+
+    <?php
+    if (isset($_POST['register_form']))
+    {
+    include 'WebLog_DB.php';
+
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $Email=$_POST['email'];
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+
+    mysql_query("INSERT INTO visitor(fname,lname,email,username,password)
+    VALUES ('$fname','$lname','$email','$username','$password')");
+    }
+    ?> 
