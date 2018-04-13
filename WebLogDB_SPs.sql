@@ -1,23 +1,14 @@
-<?php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'dbo');
-define('DB_USER','root');
-define('DB_PASSWORD','');
- 
-$con=mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error());
-$db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
-?>
 
 /*Create a schema named dbo*/
-CREATE SCHEMA dbo;
+CREATE SCHEMA Weblog;
 GO
 
 /*The SQL commands that create your tables*/
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[Login]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
-drop table [dbo].[Login]
+if exists (select * from Weblog.sysobjects where id = object_id(N'[Weblog].[Login]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [Weblog].[Login]
 GO
 
-CREATE TABLE [dbo].[Login] 
+CREATE TABLE [Weblog].[Login] 
 (
      	[UserId] [INT] IDENTITY (1,1) NOT NULL AUTO_INCREMENT,
 		[Username] [NVARCHAR] (30) NOT NULL,
@@ -26,11 +17,11 @@ CREATE TABLE [dbo].[Login]
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
-if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[User_Details]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
-drop table [dbo].[User_Details]
+if exists (select * from Weblog.sysobjects where id = object_id(N'[Weblog].[User_Details]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [Weblog].[User_Details]
 GO
 
-CREATE TABLE [dbo].[User_Details] 
+CREATE TABLE [Weblog].[User_Details] 
 (
 		[UserId] [INT] IDENTITY (1,1) NOT NULL AUTO_INCREMENT,  
     		[FirstName] [NVARCHAR] (200) NOT NULL,
@@ -41,10 +32,10 @@ GO
 
 /*The SQL commands & data that populate the tables*/
 
-INSERT INTO [dbo].[Login] (UserId, Username, UserPassword)
+INSERT INTO [Weblog].[Login] (UserId, Username, UserPassword)
 VALUES (1, 'rtaha', 'Rt123')
 
-INSERT INTO [dbo].[User_Details] (FirstName, LastName, Email);  
+INSERT INTO [Weblog].[User_Details] (FirstName, LastName, Email);  
 VALUES ( 'Rehab’, ‘Taha’, ‘ret7@njit.edu' )
 
 /*Execute the following statements:*/
@@ -63,7 +54,7 @@ SELECT * FROM Login WHERE UserId = 1 AND Username LIKE 'rtaha';*/
 
 Create PROCEDURE UserAddLogin [ @loginame = ] 'Username'
     [ , [ @UserPassword = ] 'UserPassword' ]
-    [ , [ @defdb = ] 'dbo' ]
+    [ , [ @defdb = ] 'Weblog' ]
     [ , [ @deflanguage = ] 'language' ]
     [ , [ @UserId = ] 'UserId' ]
 Go
@@ -72,7 +63,7 @@ Go
 
 CREATE LOGIN rtaha
     WITH PASSWORD = 'Rt123';
-USE dbo;
+USE Weblog;
 CREATE USER Rehab FOR LOGIN rtaha
 GO
 
