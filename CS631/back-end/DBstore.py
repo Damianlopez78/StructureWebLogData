@@ -1,8 +1,9 @@
 #-*-coding:utf-8 -*-
-import pymysql
 from sqlalchemy.dialects.mysql import NVARCHAR
 import readWebLogs
-from sqlalchemy import create_engine, MetaData, Table, Column, TEXT, Integer, String
+from sqlalchemy import create_engine, MetaData, Table, Column, TEXT, Integer
+
+
 # connection
 def storeDatafileToDB(newdata):
     engine = create_engine('mysql+pymysql://root:yourpasswordhere@localhost:3306/Weblogs')
