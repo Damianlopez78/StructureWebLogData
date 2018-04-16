@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="form-inline">
+        <a  type="button"  class="btn btn-primary" href="#/home">Home</a>
+        <a  type="button"  class="btn btn-primary" href="#/transactions">Transactions</a>
+        <a  type="button"  class="btn btn-primary" href="#/graphs">Graphs</a>
+        <a  type="button"  class="btn btn-primary" href="#/login" style="float:right">Logout</a>
+        <!--<a  ng-show="admin>0" type="button"  class="btn btn-primary" href="#/addReader">Add Reader</a>-->
+        <!--<a  ng-show="admin>0" type="button"  class="btn btn-primary" href="#/addBook">Add Book</a>-->
+        <!--<a  ng-show="admin>0" type="button"  class="btn btn-primary" href="#/">Add Branch</a>-->
+    </div>
+      <div class="home">
+
+          <br>
+
+          <input class="form-control" placeholder="Search" style="width: 500px; padding-top:4px; padding-bottom:4px;padding-left: 8px; border-radius: 4px;border: 1px solid;" type="text" ng-model="searchText">
+
+          <br>
+
+          <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>RemAddress</th>
+                <th>LogName</th>
+                <th>User</th>
+                <th>Time</th>
+                <th>Request</th>
+                <th>Status</th>
+                <th>Bytes</th>
+            <tr ng-repeat="x in books | filter:searchText">
+                <td>{{$index+1}}</td>
+                <td>{{x.remote_address}}</td>
+                <td>{{x.remote_logname}}</td>
+                <td>{{x.user}}</td>
+                <td>{{x.time}}</td>
+                <td>{{x.request}}</td>
+                <td>{{x.status}}</td>
+                <td>{{x.bytes}}</td>
+                <!--<td ng-show="admin>0"><button ng-class="{'btn btn-warning': !x.clicked, 'btn btn-success': x.clicked}" ng-click="approve(x); toggle=!toggle; x.clicked = !x.clicked"><span ng-show="toggle">Done</span><span ng-hide="toggle">Mark As Read</span></button></td>-->
+            </tr>
+        </table>
+      </div>
+</div>
