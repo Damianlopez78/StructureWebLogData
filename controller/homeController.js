@@ -1,4 +1,4 @@
-wlog.controller('homeController', ['$rootScope','$scope', function($rootScope,$scope) {
+wlog.controller('homeController', ['$rootScope','$scope','$http', function($rootScope,$scope,$http) {
 
     $scope.admin=1;
     $scope.books = [{remote_address: 'in24.inetnebr.com', remote_logname:'-', user:'-', time:'01/Aug/1995:00:00:01 -0400', request:'GET /shuttle/missions/sts-68/news/sts-68-mcc-05.txt HTTP/1.0', status:'200', bytes:'1839'},
@@ -7,6 +7,10 @@ wlog.controller('homeController', ['$rootScope','$scope', function($rootScope,$s
                     {remote_address: 'kgtyk4.kj.yamagata-u.ac.jp', remote_logname:'-', user:'-', time:'01/Aug/1995:00:00:17 -0400', request:'GET / HTTP/1.0', status:'200', bytes:'7280'},
                     {remote_address: 'kgtyk4.kj.yamagata-u.ac.jp', remote_logname:'-', user:'-', time:'01/Aug/1995:00:00:21 -0400', request:'GET /images/NASA-logosmall.gif HTTP/1.0', status:'304', bytes:'0'},
                          ];
+
+    $http.get("/cgi-bin/webData.py").then(function (response) {
+             console.log(response);
+		});
 
 
 }]);

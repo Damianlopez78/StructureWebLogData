@@ -1,0 +1,18 @@
+<div class="container">
+
+    <h2>Join Weblog Analysis Today!</h2>
+
+    <br>
+    <input type="text" class="form-control" id="name" placeholder="Full Name" ng-model="registerForm.name"><br>
+    <input type="email" class="form-control" id="email" placeholder="Email ID" ng-model="registerForm.userName"><br>
+    <input type="password" class="form-control" id="password" placeholder="password" ng-model="registerForm.password"><br>
+
+    <a ng-show="valid_id < 1" type="button"  class="btn btn-primary" ng-click="register()">Register</a>
+
+    <br>
+    <span style="color:green">{{message}}</span>
+    <br><br>
+
+    <a ng-show="valid_id > 0" type="button"  class="btn btn-primary" href="#/home">Sign In</a>
+
+</div>
