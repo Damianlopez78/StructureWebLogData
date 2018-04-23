@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Contact Us</title>
+<link rel="STYLESHEET" type="text/css" href="contact-us.css" />
+</head>
+<body>
+<form id="contactus" action="ContactUs_process.php" method="post">
+<fieldset>
+<legend>Contact Us</legend>
+
+
+<div class='comment'>* required fields</div>
+
+<fieldset>
+<div class='container'>
+   <legend> <label for="form-fname">Your First Name*:</label></legend><br/>
+    <input type="text" name="firstname" id="form-fname" maxlength="50"/><br/><br/>
+	<legend><label for="form-lname">Your Last Name*:</label></legend><br/>
+    <input type="text" name="lastname"  id="form-lname" maxlength="50"/>
+</div>
+</fieldset>
+
+<fieldset>
+<div class='container'>
+   <legend> <label for="form-email">Email Address*:</label></legend><br/>
+    <input type="text" name="email" id="form-email" maxlength="50" />   
+</div>
+</fieldset>
+
+<fieldset>
+<div class='container'>
+    <legend><label for="form-message">Your Message...</label></legend><br/>
+    <textarea name="message" rows="10" cols="50" id="form-message"></textarea>
+</div>
+</fieldset>
+
+<div class='container'>
+    <input type="submit" name="Submit" value="Submit" /> <input type="Reset"/> 
+</div>
+</fieldset>
+</form>
+
+</body>
+</html>
